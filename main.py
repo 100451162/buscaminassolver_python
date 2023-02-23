@@ -12,9 +12,9 @@ class Celda:
 
 
 def main():
-    grid = generar_matriz(4,4,8)
+    grid, n_bombs = generar_matriz(10,10,5)
 
-    solver = Solver(grid)
+    solver = Solver(grid, n_bombs)
     grid_v2 = solver.solve()
 
     for i in grid_v2:
@@ -51,7 +51,7 @@ def generar_matriz(rows,columns,bomb_percentage):
     print("N of cells: "+ str(rows*columns))
     print("N bombs: "+ str(n_bombs))
 
-    return grid
+    return grid, n_bombs
 
 if __name__ == '__main__':
     main()
